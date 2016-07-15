@@ -65,7 +65,7 @@ angular.module('starter.controllers')
 			$scope.groups=data.rows;
 		})
 	})
-	//设备位置查询，列表
+	//位置列表，查询
 	.controller('addressListCtrl', function($scope,_http,hostUrl) {
 		var storage = window.localStorage;
 		$scope.addrelistParam = {
@@ -90,7 +90,7 @@ angular.module('starter.controllers')
 			
 		})
 	})
-	//所以签到记录
+	//所有签到记录
 	.controller('allqiandaoCtrl', function($scope,_http,hostUrl) {
 		var storage = window.localStorage;
 		$scope.allqiandaoParam = {

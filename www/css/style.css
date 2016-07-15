@@ -51,3 +51,10 @@
 	height: 30px;
 	border:1px solid #33cd5f;
 }
+.titlemy{
+	text-align: center;
+	margin-top:50px;
+}
+.titlemy h1{
+	color: #33cd5f;
+}

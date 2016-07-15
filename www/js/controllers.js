@@ -3,29 +3,18 @@ angular.module('starter.controllers')
 
 })
 .controller('infoqueryCtrl', function($scope, _http, hostUrl, $state) {
-	//查询所有签到记录
-	$scope.allqd = function() {
-		$state.go('allqiandao');
-	}
-	//点击显示设备列表
-	$scope.showDeviList = function() {
-			$state.go('deviceList');
-		}
-		//位置列表
-	$scope.showAddressList = function() {
-		$state.go('addressList');
-	}
-	//我的签到记录
+	//羊群分布屏幕点图，位置列表转换为屏幕点分布
 	var storage = window.localStorage;
-	$scope.myqiandaoParam = {
-			access_token: storage.getItem("access_token"),
-			user_token: storage.getItem("user_token"),
-			'pagination.page': '1',
-			'paginateion.orderBy': ''
+	$scope.addrelistParam = {
+		access_token: storage.getItem("access_token"),
+		user_token: storage.getItem("user_token"),
+		'pagination.page': '1',
+		'paginateion.orderBy': ''
 	}
-	_http._post(hostUrl, "/wap/SignInfo/list.do", $scope.myqiandaoParam, function(data) {
-		$scope.myqdList=data.message.pageList;
+	_http._post(hostUrl, "/wap/Position/myList.do", $scope.addrelistParam, function(data) {
+		$scope.addPingmlist=data.message.pageList;
 	})
+	
 })
 
 .controller('mineCtrl', function($scope, _http, hostUrl, $state) {

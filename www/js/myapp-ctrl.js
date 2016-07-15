@@ -5,6 +5,9 @@ angular.module('starter.controllers', [])
 		$scope.backlast = function() {
 				$window.history.back();
 			}
+		$scope.gopage=function(page){
+			$state.go(page);
+		}
 			//对话框确定
 			//  alert（警告） 对话框
 		$scope.showAlert = function(myTitle, myTemplate) {
