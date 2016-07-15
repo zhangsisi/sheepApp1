@@ -15,8 +15,12 @@ angular.module('starter.controllers')
 	_http._post(hostUrl, "/wap/Position/myList.do", $scope.addrelistParam, function(data) {
 		$scope.addPingmlist=data.message.pageList;
 //		高度减少44+49=93;		
-		var mywidth=window.screen.width;
-		var myheight=window.screen.height-93;
+//		var mywidth=window.screen.width-40;
+//		var myheight=window.screen.height-133;
+		var o = document.getElementById("area");		
+		var mywidth = o.offsetWidth;  //宽度
+		var myheight = o.offsetHeight;  //高度
+		
 		//地理坐标
 		var alist=[];
 		var blist=[];
