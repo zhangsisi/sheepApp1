@@ -20,10 +20,7 @@ angular.module('starter.controllers')
 		//地理坐标
 		var alist=[];
 		var blist=[];
-		var deviceId=[];
 		for(item in $scope.addPingmlist){
-			//设备id
-			deviceId.push($scope.addPingmlist[item].deviceId);
 			//地理经度x数组
 			alist.push($scope.addPingmlist[item].longitude);
 			//地理维度y数组
@@ -42,8 +39,7 @@ angular.module('starter.controllers')
 		var minx=Array.min(alist);  
 		var maxx=Array.max(alist);
 		var miny=Array.min(blist);  
-		var maxy=Array.max(blist);
-		
+		var maxy=Array.max(blist);		
 		console.log(minx+'哈'+maxx+'哈'+miny+'哈'+maxy);
 		//地理位置与屏幕比例
 		var scaleX = ((maxx-minx)*3600)/mywidth;
@@ -53,22 +49,19 @@ angular.module('starter.controllers')
 		var minY = miny*3600/scaleY;
 		//屏幕真实的羊群所在点
 		//坐标数组
-		$scope.mycoordlist=[];
-		for(yq in deviceId){
-			$scope.mycoordlist[yq][deveId]=deviceId[yq];
-		}
 		for(yq in alist){
 			var	screenX = alist[yq]*3600/scaleX;
 			var mysheepX=screenX-minX;
-			$scope.mycoordlist[yq][xcoord]=mysheepX;
-			console.log($scope.mycoordlist);
+			$scope.addPingmlist[yq].xcoord=mysheepX;
+			console.log($scope.addPingmlist[yq].xcoord);
 		}
 		for(yq in blist){
 			var	screenY = blist[yq]*3600/scaleY;
 			var mysheepY=screenY-minY;
-			$scope.mycoordlist[yq][ycoord]=mysheepY;
-			console.log($scope.mycoordlist);
+			$scope.addPingmlist[yq].ycoord=mysheepY;
+			console.log($scope.addPingmlist[yq].ycoord);
 		}
+		console.log($scope.addPingmlist);
 	})
 	
 })

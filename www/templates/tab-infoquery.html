@@ -6,8 +6,9 @@
 </ion-header-bar>
 <ion-view>
 	<ion-content>
-		<div>
-			<img src="img/yang.png"/>
-		</div>
+		<img ng-repeat="item in addPingmlist" style="position:absolute;left:{{item.xcoord}};top:{{item.ycoord}} ;"
+			src="img/yang.png"/>
+			<!--<img style="position:absolute;left:{{item.xcoord}} ;top:{{item.ycoord}} ;" src="img/yang.png"/>-->
+			
 	</ion-content>
 </ion-view>
