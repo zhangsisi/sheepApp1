@@ -1,0 +1,28 @@
+<ion-header-bar class="bar-balanced">
+	<div class="buttons backicon" ng-click="backlast()">
+		<i class="ion-ios-arrow-back"></i>
+	</div>
+	<h1 class="title">设备管理</h1>
+</ion-header-bar>
+<ion-view>
+	<ion-content>	
+		<div class="list">
+			<div class="item" ng-repeat="x in deviceList">
+				
+				<div><span class="dls">设备号</span>{{x.deviceId}}</div>
+				<div><span class="dls">电话</span>{{x.tel}}</div>
+				
+				<div><span class="dls">所属企业</span>{{x.companyName}}</div>
+				<div class="row">
+					<div class="col"><span class="dzs">状态</span>{{x.enable}}</div>
+					<div class="col"><span class="dzs">操作</span> 修改</div>
+				</div>
+				
+				<div ng-click="szss(x.deviceId)">设置闪烁</div>
+				<div ng-click="showDeviGroup()">查看分组</div>
+				<div ng-click="hisPosition()">历史定位</div>
+			</div>
+		</div>
+		
+	</ion-content>
+</ion-view>

@@ -1,0 +1,53 @@
+/*返回*/
+.backicon i{
+	font-size: 25px;
+    margin: auto;
+}
+/*右箭头*/
+.ion-ios-arrow-right{
+	font-size: 21px !important;
+}
+/*行列*/
+.myrow{
+	padding: 0px;
+}
+.myrow .col{
+	padding: 0px;
+	height: 70px;
+	color:#3B693D;
+	text-align: center;
+	line-height: 70px;
+}
+/*颜色*/
+.color1{
+	background-color: rgba(109, 228, 143, 0.53);
+}
+.color2{
+	background-color: #C5ECF7;
+}
+.qd{
+	text-align: center;
+	margin:50px 0px 100px 0px;
+}
+.qd button{
+	height:45px;
+	width:94%;
+}
+.dls{
+	padding: 0px 10px;
+	color:#33cd5f;
+}
+.dzs{
+	color:#D82323;
+	padding-right: 10px;
+}
+.insty{
+	display: inline-block;
+	position: absolute;
+	left: 130px;
+	top: 11px;
+}
+.insty input{
+	height: 30px;
+	border:1px solid #33cd5f;
+}

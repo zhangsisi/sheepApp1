@@ -1,0 +1,23 @@
+<ion-header-bar class="bar-balanced">
+	<h1 class="title">羊群监控</h1>
+</ion-header-bar>
+<div class="bar bar-subheader" style="background-color: rgba(174, 241, 139, 0.47);">
+	<button ng-click="allqd()" class="button button-clear button-balanced">查询所有员工签到记录
+		<i style="font-size: 20px;padding-left: 10px;" class="ion-android-search"></i></button>
+</div>
+<ion-view>
+	<ion-content style="margin-top:43px">
+		<div class="row myrow">
+			<div class="col color1" ng-click="showDeviList()">设备管理</div>
+			<div class="col color2" ng-click="showAddressList()">定位查询</div>
+		</div>
+		<div class="balanced" style="text-align: center;margin: 10px 0px;">我的签到列表</div>
+		<div class="list padding">
+			<div class="item" ng-repeat="x in myqdList">
+				userId{{x.userId}}
+				userName{{x.userName}}
+				id{{x.id}}
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

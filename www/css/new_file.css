@@ -1,0 +1,269 @@
+/* Empty. Add your own CSS if you like */
+.imgslide{
+	width: 100%;
+}
+.threebtn{
+	text-align: center;
+}
+.imgbtn{
+	width:55%;
+}
+.titleimg{
+	width: 30%;
+    padding-left: 12px;
+}
+.leftcity{
+	float: left;
+	padding-left:9%;
+	width: 37%;
+}
+.titleimg1{
+	width:25%;
+    padding-left: 12px;
+}
+.firbor{
+	border-top: 2px solid #2182FF;
+	border-bottom: 2px solid #2182FF;
+	margin-top:-5px;
+	padding-top: 8px;
+}
+.citycla{
+	color: #2182FF;
+}
+.jiaoyiimg{
+	width: 98%;
+    padding-left: 2%;
+}
+.infoengerr{
+	font-size: 12px;
+	padding: 0px 12px;
+}
+.infoengerr i{
+	color:#ffba20;
+}
+.imgperson{
+	text-align: center;
+	padding-top: 53px;
+}
+.imgperson img{
+	width: 30%;
+}
+.logintip{
+	text-align: center;
+	margin: 20px 0px;
+}
+.btn{
+	padding: 4px 24px;
+    font-size: 14px;
+}
+.bgloimg{
+	width: 100%;
+	position: absolute;
+}
+.imgtoux{
+	width: 25%;
+}
+.toux{
+	 position: relative;
+    padding: 7% 0px;
+    left:6%;
+}
+.btn-login{
+	padding: 2px 26px;
+    font-size: 14px;
+    border-radius: 90px;
+    background-color:#ffba20;
+    color: #fff;
+    margin: 8% 0px 8% 20px;
+}
+.iconright{
+	color: #aaa;
+    font-size: 18px !important;
+}
+.minelist .item-note{
+	color: #000000;
+	padding-right: 10px;
+}
+.minelist .item{
+	padding-top: 13px;
+	padding-bottom: 13px;
+	padding-left: 31px;
+}
+.bottombck{
+	margin-bottom:0px;
+	border-bottom: 35px solid rgba(229, 229, 229, 0.29);
+}
+.minelist .icon img{
+	width:16px;
+}
+.searchsty{
+	font-size: 25px;
+	position: absolute;
+    right: 13px;
+    color:#387ef5;
+    margin-top: 4px;
+}
+.backicon i{
+	font-size: 25px;
+    margin: auto;
+}
+.backicon span{
+	font-size: 16px;
+	margin: auto;
+	padding-left: 5px;
+}
+.mysearch{
+	width: 80%;
+}
+.mysearch input{
+	width: 80%;
+    position: absolute;
+    right: 10px;
+    top: 9px;
+}
+.hot-list{
+	padding: 10px;
+	
+}
+.sectitle .col-33{
+	text-align: center;
+}
+.sectitle{
+	padding: 0px;
+	height: 37px;
+	line-height: 37px;
+}
+.mypover-one{
+	margin-top: 0px;
+    width: 100%;
+    left: 0px !important;
+}
+.cityright{
+	background-color:rgba(234, 228, 228, 0.45);
+	overflow-y: auto;
+}
+.modal-title{
+	border-bottom: 1px solid #B2B2B2;
+	padding: 11px;
+	
+}
+.imgtole img{
+	width: 80%;
+	margin-top: 5px;
+	margin-left: 4px;
+}
+.sanj{
+	float: right;
+    padding-right: 2px;
+    color: rgba(0, 0, 0, 0.24);
+}
+/*手风琴样式*/
+.item-accordion {
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+.accoli{
+	border-top: 1px solid #e5e5e5;
+	padding-left: 10px;
+	height: 38px;
+	line-height: 38px;
+}
+.iconacco{
+	float: right;
+	margin-right:5px;
+}
+.allacco .ion-chevron-down{
+	color: #387ef5;
+}
+.firtit{
+	padding-left: 5px;
+}
+.price-term {
+    padding: 2px 10px;
+    border-radius: 10px;
+    background: #d9d9d9;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.checked {
+    background: rgb(247,121,33);
+    color: #fff;
+}
+.cs-sty{
+	
+}
+.accoli-wrap{
+	overflow-y: auto;
+}
+.jggs{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.xqzs{
+	color: red;
+}
+
+.text-wrap{
+	width: 100%;
+	margin-top: 15px;
+}
+.xq-text{
+	width: 95%;
+	height: 120px;
+	border: 1px solid #B2B2B2;
+	margin: auto;
+}
+.btnwrap{
+	text-align: center;
+	margin-top: 30px;
+}
+.btnwrap .button{
+	width:50%;
+	font-size: 14px;
+}
+.csselect{
+	float: right;
+    margin-right: 2px;
+    color: rgb(247,121,33);
+    font-size: 14px;
+    margin-top:7px;
+}
+.infomy{
+	float: right;
+	margin-top:45px;
+	margin-right:40%;
+}
+.insty{
+	display: inline-block;
+	position: absolute;
+	left: 130px;
+	top: 11px;
+}
+.insty input{
+	height: 30px;
+	border:1px solid #387ef5;
+}
+.leftinf{
+	padding-right: 15px;
+}
+.regititle{
+	padding: 12px 0px 0px 15px;
+	margin-bottom: -10px;
+}
+.numbersty{
+	width:50px;
+	border:1px solid rgb(247,121,33) !important;
+	margin-left: 30px;
+	height: 30px !important;
+	margin-bottom: 10px;
+}
