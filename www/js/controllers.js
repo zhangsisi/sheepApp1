@@ -75,11 +75,12 @@ angular.module('starter.controllers')
 			}
 			console.log($scope.addPingmlist);
 			//cavas测试羊的位置test1
-			var c=document.getElementById("area");
+//			var c=document.getElementById("area");
 			var img=new Image();
 			img.src="img/yang.png";
 			img.width="5";
-			var cxt=c.getContext("2d");
+			var cxt=o.getContext("2d");
+			//模拟数据
 			cxt.drawImage(img,10,90,20,20);
 			cxt.drawImage(img,40,9,20,20);
 			cxt.drawImage(img,80,77,20,20);
