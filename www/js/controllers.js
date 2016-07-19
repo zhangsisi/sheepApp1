@@ -87,9 +87,13 @@ angular.module('starter.controllers')
 			for(onesh in $scope.addPingmlist){			
 //				cxt.drawImage(img,$scope.addPingmlist[onesh].xcoord,$scope.addPingmlist[onesh].ycoord,10,10,20,20);
 				console.log($scope.addPingmlist[onesh].xcoord+"哈哈"+onesh+"哈哈"+$scope.addPingmlist[onesh].ycoord);
+			}		
+			//羊群显示完毕
+			o.onmousedown = function(e){
+				alert(11); 
 			}
-			
 			//测试end
+			
 //		})
 
 	})
