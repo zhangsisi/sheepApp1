@@ -58,3 +58,9 @@
 .titlemy h1{
 	color: #33cd5f;
 }
+.areadiv{
+	height:98%;
+	width:98%;
+	position: absolute;
+	margin:1%;
+}
