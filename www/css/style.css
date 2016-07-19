@@ -25,6 +25,15 @@
 .color2{
 	background-color: #C5ECF7;
 }
+/*羊群div*/
+.areadiv{
+	height:98%;
+	width:98%;
+	position: absolute;
+	margin:1%;
+	background-image: url(../img/grass.jpg);
+}
+/*公共end----------------------------------------------------------*/
 .qd{
 	text-align: center;
 	margin:50px 0px 100px 0px;
@@ -58,9 +67,4 @@
 .titlemy h1{
 	color: #33cd5f;
 }
-.areadiv{
-	height:98%;
-	width:98%;
-	position: absolute;
-	margin:1%;
-}
+

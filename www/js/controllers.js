@@ -14,17 +14,17 @@ angular.module('starter.controllers')
 		}
 //		_http._post(hostUrl, "/wap/Position/myList.do", $scope.addrelistParam, function(data) {
 			//		$scope.addPingmlist=data.message.pageList;
+			
 			$scope.addPingmlist = [{
 				longitude: 132,
-				latitude: 35
+				latitude: 1
 			}, {
 				longitude: 130,
-				latitude: 31
+				latitude: 199
 			}, {
 				longitude: 131,
-				latitude: 32
+				latitude:90
 			}];
-			
 			var o = document.getElementById("area");
 			var mywidth = o.offsetWidth; //宽度
 			var myheight = o.offsetHeight; //高度
@@ -74,6 +74,21 @@ angular.module('starter.controllers')
 				console.log($scope.addPingmlist[yq].ycoord);
 			}
 			console.log($scope.addPingmlist);
+			//cavas测试羊的位置test1
+			var c=document.getElementById("area");
+			var img=new Image();
+			img.src="img/yang.png";
+			img.width="5";
+			var cxt=c.getContext("2d");
+			cxt.drawImage(img,10,90,20,20);
+			cxt.drawImage(img,40,9,20,20);
+			cxt.drawImage(img,80,77,20,20);
+			for(onesh in $scope.addPingmlist){			
+//				cxt.drawImage(img,$scope.addPingmlist[onesh].xcoord,$scope.addPingmlist[onesh].ycoord,10,10,20,20);
+				console.log($scope.addPingmlist[onesh].xcoord+"哈哈"+onesh+"哈哈"+$scope.addPingmlist[onesh].ycoord);
+			}
+			
+			//测试end
 //		})
 
 	})
