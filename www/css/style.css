@@ -29,9 +29,8 @@
 .areadiv{
 	height:98%;
 	width:98%;
-	position: absolute;
 	margin:1%;
-	background-image: url(../img/grass.jpg);
+	background-color:#408052;
 }
 /*公共end----------------------------------------------------------*/
 .qd{

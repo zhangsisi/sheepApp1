@@ -15,16 +15,16 @@ angular.module('starter.controllers')
 //		_http._post(hostUrl, "/wap/Position/myList.do", $scope.addrelistParam, function(data) {
 			//		$scope.addPingmlist=data.message.pageList;
 			
-			$scope.addPingmlist = [{
-				longitude: 132,
-				latitude: 1
-			}, {
-				longitude: 130,
-				latitude: 199
-			}, {
-				longitude: 131,
-				latitude:90
-			}];
+//			$scope.addPingmlist = [{
+//				longitude: 132,
+//				latitude: 1
+//			}, {
+//				longitude: 130,
+//				latitude: 199
+//			}, {
+//				longitude: 131,
+//				latitude:90
+//			}];
 			var o = document.getElementById("area");
 			var mywidth = o.offsetWidth; //宽度
 			var myheight = o.offsetHeight; //高度
@@ -38,7 +38,7 @@ angular.module('starter.controllers')
 				//地理维度y数组
 				blist.push($scope.addPingmlist[item].latitude);
 			}
-			console.log(alist + '哈' + blist);
+//			console.log(alist + '哈' + blist);
 
 			//最大最小值
 			Array.max = function(array) {
@@ -52,7 +52,7 @@ angular.module('starter.controllers')
 			var maxx = Array.max(alist);
 			var miny = Array.min(blist);
 			var maxy = Array.max(blist);
-			console.log(minx + '哈' + maxx + '哈' + miny + '哈' + maxy);
+//			console.log(minx + '哈' + maxx + '哈' + miny + '哈' + maxy);
 			//地理位置与屏幕比例
 			var scaleX = ((maxx - minx) * 3600) / mywidth;
 			var scaleY = ((maxy - miny) * 3600) / myheight;
@@ -65,33 +65,64 @@ angular.module('starter.controllers')
 				var screenX = alist[yq] * 3600 / scaleX;
 				var mysheepX = screenX - minX;
 				$scope.addPingmlist[yq].xcoord = mysheepX;
-				console.log($scope.addPingmlist[yq].xcoord);
+//				console.log($scope.addPingmlist[yq].xcoord);
 			}
 			for(yq in blist) {
 				var screenY = blist[yq] * 3600 / scaleY;
 				var mysheepY = screenY - minY;
 				$scope.addPingmlist[yq].ycoord = mysheepY;
-				console.log($scope.addPingmlist[yq].ycoord);
+//				console.log($scope.addPingmlist[yq].ycoord);
 			}
-			console.log($scope.addPingmlist);
+//			console.log($scope.addPingmlist);
 			//cavas测试羊的位置test1
-//			var c=document.getElementById("area");
-			var img=new Image();
-			img.src="img/yang.png";
-			img.width="5";
 			var cxt=o.getContext("2d");
-			//模拟数据
-			cxt.drawImage(img,10,90,20,20);
-			cxt.drawImage(img,40,9,20,20);
-			cxt.drawImage(img,80,77,20,20);
-			for(onesh in $scope.addPingmlist){			
-//				cxt.drawImage(img,$scope.addPingmlist[onesh].xcoord,$scope.addPingmlist[onesh].ycoord,10,10,20,20);
-				console.log($scope.addPingmlist[onesh].xcoord+"哈哈"+onesh+"哈哈"+$scope.addPingmlist[onesh].ycoord);
-			}		
+			var img=new Image()
+			img.src="img/yang.png"
+			img.onload = function() {
+   				cxt.drawImage(img, 100, 100,50,20);
+   				cxt.drawImage(img, 40, 60,50,20);
+   				cxt.drawImage(img, 140, 30,50,20);
+   			}
+		$scope.addPingmlist = [{
+			xcoord:100,
+			ycoord:100
+		}, {
+			xcoord:40,
+			ycoord:60
+		},{
+			xcoord:140,
+			ycoord:30
+		}]
+//	
+//
+//			
+//			//模拟数据--------end------------------------------------
+//	img.onload = function() {	
+//		for(onesh in $scope.addPingmlist){	
+//			cxt.drawImage(img,$scope.addPingmlist[onesh].xcoord,$scope.addPingmlist[onesh].ycoord,50,20);
+//			console.log($scope.addPingmlist[onesh].xcoord+"哈哈"+onesh+"哈哈"+$scope.addPingmlist[onesh].ycoord);			
+//		}	
+//	}
+			
 			//羊群显示完毕
-			o.onmousedown = function(e){
-				alert(11); 
-			}
+o.onclick = function(e){
+	
+	e=e||event;//获取事件对象
+    //获取事件在canvas中发生的位置
+    var x=e.clientX-o.offsetLeft;
+    var y=e.clientY-o.offsetTop;
+    console.log(x+"哈哈xy"+y);
+    //如果事件位置在矩形区域中
+    for(onesh in $scope.addPingmlist){
+    	var sa=$scope.addPingmlist[onesh].xcoord;
+    	var sb=$scope.addPingmlist[onesh].ycoord;
+    	console.log(sa+"哈哈sab"+sb);
+//		if(x>=sa&&(x<=sa+50)&&y>=sb&&(y<=sb+20)){
+		if(y>=sb){
+		    alert(11); 
+		}
+    }
+}
 			//测试end
 			
 //		})
