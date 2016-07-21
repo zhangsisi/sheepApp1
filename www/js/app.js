@@ -92,8 +92,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 			;
 
 		// if none of the above states are matched, use this as the fallback
-//		$urlRouterProvider.otherwise('login');
-		$urlRouterProvider.otherwise('tab/infoquery');
+		$urlRouterProvider.otherwise('login');
+//		$urlRouterProvider.otherwise('tab/infoquery');
 
 	})
 	.value("hostUrl", "http://139.129.119.141:8282/herd");

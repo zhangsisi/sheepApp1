@@ -76,7 +76,32 @@ angular.module('starter.controllers')
 		}
 		_http._post(hostUrl, "/wap/Position/myList.do", $scope.addrelistParam, function(data) {
 			$scope.addlist=data.message.pageList;
+			$scope.totalCount = data.message.totalCount;
+			
+			if($scope.totalCount > 20) {
+				getMoreaddlist();
+			} else {
+				$scope.state = false;
+			}
 		})
+		
+		//上拉位置列表
+		function getMoreaddlist() {
+			$scope.addrelistParam['pagination.page'] = 2;
+			$scope.state = true;
+			$scope.loadMore = function() {
+				_http._post(hostUrl, "/wap/Position/myList.do", $scope.addrelistParam, function(data) {
+					console.log("请求拉取更多");
+					if(data.message.totalCount / 20 <= $scope.addrelistParam['pagination.page']) {
+						$scope.state = false;
+					} else {
+						$scope.addlist = $scope.addlist.concat(data.message.pageList);
+						$scope.$broadcast('scroll.infiniteScrollComplete');
+						$scope.addrelistParam['pagination.page'] += 1;
+					}
+				})
+			}
+		}
 	})
 	//设备历史定位
 	.controller('hisPositionCtrl', function($scope,_http,hostUrl) {
