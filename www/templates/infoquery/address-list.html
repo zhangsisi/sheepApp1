@@ -8,12 +8,11 @@
 	<ion-content>	
 		
 		<div class="list">
-			<div class="item" ng-repeat="x in addlist">
-				<div>设备编号{{x.deviceId}}</div>	
-				<div>经度{{x.longitude}}</div>
-				<div>维度{{x.latitude}}</div>
-				<div>信号强度{{x.csq}}</div>
-				<div>体温{{x.bodyTem}}</div>
+			<div class="item myaddli" ng-repeat="x in addlist">
+				<div><span>设备编号:</span>{{x.deviceId}}</div>	
+				<div><span>信号强度:</span>{{x.csq}}</div>
+				<div><span>体温:</span>{{x.bodyTem}}</div>
+				<div><span>经度:</span>{{x.longitude}}<span style="padding-left:20px;">维度:</span>{{x.latitude}}</div>
 			</div>
 		</div>
 		

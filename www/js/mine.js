@@ -36,15 +36,5 @@ angular.module('starter.controllers')
 
 		}
 		
-		//测试
-		var c=document.getElementById("myCanvas");
-		var cxt=c.getContext("2d");
-		var img=new Image()
-		img.src="img/yang.png"
-		img.onload = function() {
- 			cxt.drawImage(img, 0, 0);
- 		}
-
-
 	});
 	

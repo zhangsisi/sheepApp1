@@ -25,6 +25,10 @@
 .color2{
 	background-color: #C5ECF7;
 }
+/*项目绿*/
+.color3{
+	color:#33cd5f;
+}
 /*羊群div*/
 .areadiv{
 	height:98%;
@@ -66,4 +70,10 @@
 .titlemy h1{
 	color: #33cd5f;
 }
-
+.myaddli div{
+	padding:2px 0px;
+}
+.myaddli span{
+	color:#33cd5f;
+	padding-right: 10px;
+}
