@@ -4,6 +4,21 @@ angular.module('starter.controllers')
 	})
 	.controller('infoqueryCtrl', function($scope, _http, hostUrl,
 		$state) {
+		//签到
+	$scope.qd = function() {
+		var storage = window.localStorage;
+		$scope.qiandParam = {
+			access_token: storage.getItem("access_token"),
+			user_token: storage.getItem("user_token"),
+			latitude: '111',
+			longitude: '123'
+		}
+		_http._post(hostUrl, "/wap/SignInfo/save.do", $scope.qiandParam, function(data) {
+			$scope.showAlert(data.message);
+		})
+	}
+	
+	//签到end___________________---------------------------------------------------------
 		//羊群分布屏幕点图，位置列表转换为屏幕点分布
 		var storage = window.localStorage;
 		$scope.addrelistParam = {
