@@ -31,10 +31,13 @@
 }
 /*羊群div*/
 .areadiv{
-	height:98%;
+	height:80%;
 	width:98%;
 	margin:1%;
-	background-color:#408052;
+	/*background-color:#408052;*/
+}
+.areadivbtn{
+    width:48%;   
 }
 /*公共end----------------------------------------------------------*/
 .qd{
