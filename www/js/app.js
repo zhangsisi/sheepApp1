@@ -16,7 +16,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	});
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+	//	$ionicConfigProvider.platform.ios.tabs.style('standard');
+	$ionicConfigProvider.platform.ios.tabs.position('bottom');
+//	$ionicConfigProvider.platform.android.tabs.style('standard');
+	$ionicConfigProvider.platform.android.tabs.position('bottom');
+	$ionicConfigProvider.platform.ios.navBar.alignTitle('center');
+	$ionicConfigProvider.platform.android.navBar.alignTitle('center');
 		$stateProvider
 	//tab-----start-----------------		
 		// setup an abstract state for the tabs directive
