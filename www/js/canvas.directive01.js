@@ -2,8 +2,8 @@
     var app = angular.module('starter.controllers');
     app.directive('sheepcanvas', function ($document, $window) {
         return {　　
-//          template: '<div id="container" class="areadiv"></div><button class="areadivbtn" id="biggerbtn">放大</button><button class="areadivbtn" id="smallerbtn">缩小</button>',
             template: '<div id="container" class="areadiv"></div><div class="btnfs"><button class="areadivbtn1" id="biggerbtn">放大</button><button class="areadivbtn" id="smallerbtn">缩小</button></div>',
+
             　　restrict: 'E',
 
             　　scope: {
@@ -11,8 +11,7 @@
             },
 
               //后期想要自动获取并绑定牧羊人的真实位置   请在此页面按ctrl+f  搜索TODO   会跳转到具体代码处  按照说明修改
-              //点击事件是clicked  里面是alert 按需要改   
-              //alert信息  请ctrl+f搜索 AlertInformation
+
             　link: function (scope, iElement, iAttrs) {
                 var document = $document[0];
                 var window = $window;
@@ -38,6 +37,11 @@
                 function updateDatas(){
                   for (var o = 0; o < scope.resource.length; o++) {
                     scope.resource[o].error = false;
+                    if(!!context_globle.alertSheep[scope.resource[o].deviceId]){
+                      scope.resource[o].showAlert = context_globle.alertSheep[scope.resource[o].deviceId];
+                    }else{
+                      scope.resource[o].showAlert = false;
+                    }
                   }
                   bindSheeps();
                 }
@@ -65,6 +69,7 @@
                     scope.resource[o].x = x;
                     scope.resource[o].y = y;
                     var sheep;
+                    var talk;
                     var text;
                     if(scope.resource[o].bodyTemEr>0){
                       scope.resource[o].error = !scope.resource[o].error;
@@ -76,8 +81,8 @@
                     }else{
                       sheep = game.make.sprite(scope.resource[o].x, scope.resource[o].y, 'sheep');
                     }
-                 
-                    //AlertInformation
+                    talk = game.make.sprite(scope.resource[o].x-sheep.width, scope.resource[o].y-sheep.height*1.8, 'talk');
+                    var style = { font: "12px Arial", fill: "#000000", wordWrap: true, wordWrapWidth: talk.width, align: "left" };
                     var str = "设备号:"+scope.resource[o].deviceId+"\n";
                     if(scope.resource[o].alarmMsgList.length>0){
                       str += "消息:";
@@ -89,14 +94,22 @@
                     if(scope.resource[o].bodyTemEr>0){
                       str += "羊群体温异常";
                     }
+                    text = game.make.text(20, 10,str, style);
+                    talk.addChild(text);
+                    if(scope.resource[o].showAlert){
+                      bgSprite.addChild(talk);
+                    }
+
                     bgSprite.addChild(sheep);
                     sheep.inputEnabled = true;
                     sheep.input.pixelPerfectClick = true;
+                    sheep.sheepindex = o;
                     sheep.bodyTemEr = scope.resource[o].bodyTemEr;
                     sheep.blink = false;
                     sheep.events.onInputDown.add(clicked, this);
-                    sheep.alertinfo = str;
                     context_globle.sheeps.push(sheep);
+                    context_globle.sheeps.push(talk);
+                    context_globle.sheeps.push(text);
                   }
                 }
 
@@ -158,7 +171,9 @@
                 }
 
                 function clicked(p){
-                  scope.showAlert("",p.alertinfo);
+                  scope.resource[p.sheepindex].showAlert = !scope.resource[p.sheepindex].showAlert;
+                  context_globle.alertSheep[scope.resource[p.sheepindex].deviceId] = scope.resource[p.sheepindex].showAlert;
+                  bindSheeps();
                 }
 
                 function bigger(){

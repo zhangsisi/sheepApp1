@@ -37,7 +37,20 @@
 	/*background-color:#408052;*/
 }
 .areadivbtn{
-    width:48%;   
+	background-color: #FFF;
+    width:49%;
+    color: #33cd5f;
+    border: 2px solid #28a54c; 
+}
+.areadivbtn1{
+	background-color: #FFF;
+    width:49%;
+    color: #33cd5f;
+    border: 2px solid #28a54c; 
+    margin-right:1px;
+}
+.btnfs{
+	text-align: center;	
 }
 /*公共end----------------------------------------------------------*/
 .qd{
@@ -46,7 +59,7 @@
 }
 .qd button{
 	height:45px;
-	width:94%;
+	width:98%;
 }
 .dls{
 	padding: 0px 10px;
