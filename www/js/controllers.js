@@ -1,9 +1,9 @@
 angular.module('starter.controllers')
-	.controller('loginCtrl', function($scope, _http, $state) {
+	.controller('loginCtrl', function($scope, _http, $state,$ionicPopup) {
 
 	})
 	.controller('infoqueryCtrl', function($scope, _http, hostUrl,
-		$state, $window) {
+		$state, $window,$parse,$ionicPopup) {
 		//签到
 	$scope.qd = function() {
 		var storage = window.localStorage;
@@ -39,6 +39,14 @@ angular.module('starter.controllers')
         $window.setInterval(function () {
             getSheepList();
         }, 10000);
+        
+        $scope.showyangAlert = function(myTitle, myTemplate) {
+			var alertPopup = $ionicPopup.alert({
+				title: myTitle,
+				template: myTemplate
+			});
+		};
+		
 
 	})
 

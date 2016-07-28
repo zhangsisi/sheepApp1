@@ -1,6 +1,6 @@
 (function () {
     var app = angular.module('starter.controllers');
-    app.directive('sheepcanvas', function ($document, $window) {
+    app.directive('sheepcanvas', function ($document, $window,$ionicPopup) {
         return {　　
 //          template: '<div id="container" class="areadiv"></div><button class="areadivbtn" id="biggerbtn">放大</button><button class="areadivbtn" id="smallerbtn">缩小</button>',
             template: '<div id="container" class="areadiv"></div><div class="btnfs"><button class="areadivbtn1" id="biggerbtn">放大</button><button class="areadivbtn" id="smallerbtn">缩小</button></div>',
@@ -158,7 +158,7 @@
                 }
 
                 function clicked(p){
-                  scope.showAlert("",p.alertinfo);
+                  scope.$parent.showyangAlert("",p.alertinfo);
                 }
 
                 function bigger(){
