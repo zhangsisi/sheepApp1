@@ -93,3 +93,23 @@
 	color:#33cd5f;
 	padding-right: 10px;
 }
+.ion-clipboard:before{
+    content:'';
+    background-image:url('../img/scjk.png');
+    background-size:32px 32px;
+    width:32px;
+    height:32px;
+    z-index: 100;
+}
+.ion-clipboard1:before{
+    /*content:'';*/
+   content:"";
+    background-image:url('../img/jk1.png');
+    background-size:32px 32px;
+    width:32px;
+    height:32px;
+    z-index: 100;
+    display: block;
+    margin: 0 auto;
+}
+
